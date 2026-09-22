@@ -1,0 +1,156 @@
+/*
+    Theme Name: Saiyansgym
+    Theme URI: 
+    Author: Diego Perez
+    Author URI: https://github.com/Diego3128
+    Description: This theme is a custom design for saiyansgym!
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: Gym, gimnasio, flexbox, css grid, mobile first, ACF
+    Text Domain: saiyansgym
+*/
+
+/* styles by the best web dev: */
+
+*,
+::before,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
+
+
+:root {
+    /* variables */
+
+    /* fonts */
+  --font-main: "Raleway" sans-serif;
+  --font-title: "Love Ya Like A Sister", cursive;
+
+  /* colors */
+
+  --color-main: #ff5b00;
+  --color-gray-dark: #2f2e2e;
+  --color-gray-light: #ebebeb;
+  --color-white: #fff;
+  --color-black: #000;
+
+}
+
+
+/* global resets */
+
+* {
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.7rem;
+}
+
+h5 {
+  font-size: 2.4rem;
+}
+
+h6 {
+  font-size: 2.1rem;
+}
+
+body {
+  line-height: 2;
+}
+
+
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.container{
+    width: min(95%, 160rem);
+    margin: 0 auto;
+}
+
+
+/* utilities */
+
+.text-center{
+    text-align: center;
+}
+
+.text-main{
+    color: var(--color-main);
+}
+
+.text-gray-dark{
+    color: var(--color-gray-dark);
+}
+
+.text-gray-light{
+    color: var(--color-gray-light);
+}
+
+
+.text-white{
+    color: var(--color-white);
+}
+
+
+.text-black{
+    color: var(--color-black);
+}
+
+
+.section {
+    padding: 4rem 0;
+}
