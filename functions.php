@@ -1,5 +1,16 @@
 <?php
 
+// theme setup
+function saiyansgym_setup(){
+    // enable post thumbnails
+    add_theme_support('post-thumbnails');
+
+    // dinamic titles for SEO
+    add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'saiyansgym_setup');
+
 // register menus
 function  saiyansgym_menus()
 {

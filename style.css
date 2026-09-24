@@ -28,11 +28,10 @@ html {
 
 @import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
 
-
 :root {
-    /* variables */
+  /* variables */
 
-    /* fonts */
+  /* fonts */
   --font-main: "Raleway" sans-serif;
   --font-title: "Love Ya Like A Sister", cursive;
 
@@ -43,9 +42,7 @@ html {
   --color-gray-light: #ebebeb;
   --color-white: #fff;
   --color-black: #000;
-
 }
-
 
 /* global resets */
 
@@ -62,6 +59,7 @@ h6 {
   font-family: var(--font-title);
   margin: 0 0 40px 0;
   line-height: 1.2;
+  margin-bottom: 4rem;
 }
 
 h1 {
@@ -92,65 +90,218 @@ body {
   line-height: 2;
 }
 
-
-p{
-    margin: 0;
+p {
+  margin: 0;
 }
 
-a{
-    text-decoration: none;
-    color: var(--color-black);
+a {
+  text-decoration: none;
+  /* color: var(--color-black); */
 }
 
-ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-img{
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
 }
 
-
-.container{
-    width: min(95%, 160rem);
-    margin: 0 auto;
+.container {
+  width: min(95%, 140rem);
+  margin: 0 auto;
 }
 
+.container__centered {
+  width: min(95%, 90rem);
+}
 
 /* utilities */
 
-.text-center{
-    text-align: center;
+.text-center {
+  text-align: center;
 }
 
-.text-main{
+.text-main {
+  color: var(--color-main);
+}
+
+.text-gray-dark {
+  color: var(--color-gray-dark);
+}
+
+.text-gray-light {
+  color: var(--color-gray-light);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-black {
+  color: var(--color-black);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+main{
+  min-height: 90dvh;
+}
+
+.main-title {
+  background-color: var(--color-black);
+  padding: 0;
+  width: fit-content;
+  padding: 10px;
+  /* margin-inline: auto; */
+  border-radius: 0px 0px 10px 10px;
+}
+
+/* header styles */
+
+.header {
+  background-color: var(--color-black);
+  padding: 10px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-bar__logo {
+    width: 150px;
+  }
+}
+/* .nav-bar__menu ul */
+
+.nav-bar__menu .menu {
+  display: none;
+}
+
+/* TODO: Display csubmenis */
+.nav-bar__menu .menu .menu-item .sub-menu {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-bar {
+    flex-direction: row;
+  }
+
+  .nav-bar__menu .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+/* links */
+.nav-bar__menu .menu .menu-item a {
+  font-family: var(--font-title);
+  font-size: 1.9rem;
+  color: var(--color-white);
+  text-transform: capitalize;
+  padding: 5px 10px;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* hightlight current page */
+.nav-bar__menu .menu .menu-item.current_page_item a {
+  color: var(--color-white);
+  background-color: var(--color-main);
+}
+
+/* effect on desktop */
+@media screen and (min-width: 800px) {
+  /* From Uiverse.io by gharsh11032000 */
+  .nav-bar__menu .menu a {
+    cursor: pointer;
+    position: relative;
     color: var(--color-main);
-}
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-.text-gray-dark{
-    color: var(--color-gray-dark);
-}
+  .nav-bar__menu .menu a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--color-main);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-.text-gray-light{
-    color: var(--color-gray-light);
-}
+  .nav-bar__menu .menu a:hover::before {
+    scale: 3;
+  }
 
-
-.text-white{
+  .nav-bar__menu .menu a:hover {
     color: var(--color-white);
+    scale: 1.1;
+  }
+
+  .nav-bar__menu .menu a:active {
+    scale: 1;
+  }
+}
+
+/* about us */
+
+.featured-image {
+  margin: 0 auto 3rem;
+}
+.about-content {
+  margin-bottom: 10rem;
+
+  p {
+    margin-bottom: 3rem;
+  }
 }
 
 
-.text-black{
+
+/* foooter */
+
+.footer{
+      padding: 10rem 0;
+}
+.footer .nav-bar__menu .menu {
+    background-color: var(--color-white);
+    padding: 5rem 0;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .nav-bar__menu .menu a {
     color: var(--color-black);
 }
 
+.footer .nav-bar__menu .menu .menu-item.current_page_item a {
+  color: var(--color-black);
+  background-color: var(--color-main);
+}
 
-.section {
-    padding: 4rem 0;
+.footer .copyright{
+  text-align: center;
+  color: var(--color-gray-dark);
+  text-transform: capitalize;
 }
