@@ -1,6 +1,13 @@
 <?php
 
-//add widgets
+
+//includes
+
+//add custom widgets
+require_once get_template_directory() . '/includes/widgets.php';
+
+
+//add widget areas
 function saiyansgym_widgets()
 {
     register_sidebar([
