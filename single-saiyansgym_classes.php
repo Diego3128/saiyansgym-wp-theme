@@ -8,9 +8,11 @@ get_header();
         get_template_part('template-parts/class-post');
         ?>
     </section>
-    <aside class="sidebar">
-        <h3>Sidebar here!</h3>
-    </aside>
+
+    <?php
+    get_sidebar("secondary");
+    ?>
+
 </main>
 
 

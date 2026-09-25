@@ -1,7 +1,33 @@
 <?php
 
+//add widgets
+function saiyansgym_widgets()
+{
+    register_sidebar([
+        'id' => 'sidebar_1',
+        'name' => 'Sidebar 1',
+        'before_widget' => '<div class="widget sidebar_1">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget__title text-center text-main">',
+        'after_title' => '</h3>',
+    ]);
+
+    register_sidebar([
+        'id' => 'sidebar_2',
+        'name' => 'Sidebar 2',
+        'before_widget' => '<div class="widget sidebar_2">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget__title text-center text-main">',
+        'after_title' => '</h3>',
+    ]);
+}
+
+add_action('widgets_init', 'saiyansgym_widgets');
+
+
 // theme setup
-function saiyansgym_setup(){
+function saiyansgym_setup()
+{
     // enable post thumbnails
     add_theme_support('post-thumbnails');
 
