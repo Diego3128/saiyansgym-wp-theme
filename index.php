@@ -3,6 +3,8 @@ get_header();
 ?>
 
 <main>
+
+    <h2>Index.php</h2>
     <?php
 
     while (have_posts()) :

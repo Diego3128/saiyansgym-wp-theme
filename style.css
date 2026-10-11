@@ -409,6 +409,72 @@ main {
   color: var(--color-white);
 }
 
+.card-post {
+  position: relative;
+
+  .categories {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    transform: translateX(110%);
+    transition: transform 500ms ease-in-out;
+
+    ul.post-categories {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      padding: 3px;
+
+      li {
+        width: fit-content;
+      }
+
+      a {
+        font-size: 12px;
+        color: white;
+        background-color: var(--color-main);
+        padding: 3px 5px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.card-post:hover {
+  .categories {
+    transform: translateX(0);
+  }
+}
+
+.card-post .title {
+  height: 70px;
+  font-size: 1.8rem;
+}
+
+.card-post .meta {
+  background: var(--color-gray-dark);
+  color: var(--color-gray-light);
+  padding: 10px 10px 0 0;
+
+  .author {
+    display: block;
+    color: inherit;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+
+  .date {
+    background-color: var(--color-gray-light);
+    color: var(--color-gray-dark);
+    width: fit-content;
+    border-radius: 0px 3px 0px 0px;
+    padding: 3px;
+    font-size: small;
+  }
+}
+
 /* 
 ===========
 styles for posts with sidebar
@@ -621,5 +687,174 @@ Gallery
 @media screen and (min-width: 1350px) {
   .img-gallery {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 
+=================
+Styles for a single post
+=================
+*/
+
+.single-post {
+  .featured-image {
+    margin: 0;
+  }
+
+  ul.post-categories {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    padding: 3px;
+    gap: 10px;
+
+    li {
+      width: fit-content;
+    }
+
+    a {
+      font-size: 16px;
+      color: white;
+      background-color: var(--color-main);
+      padding: 3px 5px;
+      border-radius: 4px;
+    }
+  }
+
+  .meta {
+    background: var(--color-gray-light);
+    margin: 15px 0;
+    padding: 20px 10px;
+
+    .author {
+      display: block;
+      color: inherit;
+      text-transform: capitalize;
+
+      .name {
+        color: var(--color-main);
+      }
+    }
+
+    .date {
+      width: fit-content;
+      font-size: small;
+    }
+  }
+}
+
+
+/* 
+============
+styles for possible elements in the post content
+============
+*/
+.post .content {
+  font-family: var(--font-main);
+  color: var(--color-gray-dark);
+  font-size: 1.1rem;
+  line-height: 1.7;
+
+  /* Paragraphs & Spacing */
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Links */
+  a {
+    color: var(--color-main);
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  /* Headings inside post content */
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    color: var(--color-gray-dark);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.6rem; }
+  h4 { font-size: 1.3rem; }
+
+  /* Lists */
+  ul, ol {
+    margin: 0 0 1.5rem 2rem;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 4px solid var(--color-main);
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-gray-light);
+    font-style: italic;
+    color: var(--color-gray-dark);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Images inserted in content */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: block;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid var(--color-gray-light);
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--color-gray-dark);
+      color: var(--color-white);
+      font-family: var(--font-title);
+      letter-spacing: 0.5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
+
+  /* Horizontal Rules */
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-gray-light);
+    margin: 2.5rem 0;
   }
 }
