@@ -1,4 +1,7 @@
 <?php
+
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 // shortcode to display map and location form
 function saiyansgym_location_shortcode()
 {

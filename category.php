@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 get_header();
 
 $category = get_queried_object();

@@ -3,6 +3,7 @@
  * Template name: No container (No margins or max width)
  * Template post type: page
 */
+if (!defined('ABSPATH')) exit("Direct access forbidden");
 
 get_header();
 ?>

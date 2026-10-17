@@ -1,4 +1,6 @@
 <?php
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 while (have_posts()) :
     the_post();
     $status = get_post_status();

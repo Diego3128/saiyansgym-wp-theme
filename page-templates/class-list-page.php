@@ -3,7 +3,11 @@
  * Template name: Class List (No sidebars)
  * Template post type: page
 */
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 get_header();
+
+
 ?>
 
 <main class="container">

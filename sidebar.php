@@ -1,4 +1,7 @@
 <?php
+
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 if (is_active_sidebar('sidebar_2')):
 
 ?>

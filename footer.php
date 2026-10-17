@@ -1,3 +1,7 @@
+<?php
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
+?>
 <footer class="footer">
     <hr>
         <nav class="nav-bar__menu container">

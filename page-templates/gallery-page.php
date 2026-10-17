@@ -3,6 +3,7 @@
  * Template name: Image Gallery
  * Template post type: page
 */
+if (!defined('ABSPATH')) exit("Direct access forbidden");
 
 get_header();
 ?>

@@ -1,4 +1,7 @@
 <?php
+
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 while (have_posts()) : the_post(); ?>
     <h1 class="main-title text-center text-main">
         <?php

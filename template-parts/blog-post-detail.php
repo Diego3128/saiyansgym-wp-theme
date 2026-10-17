@@ -1,3 +1,7 @@
+<?php
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
+?>
 <div class="single-post post">
     <?php
     while (have_posts()) : the_post(); ?>

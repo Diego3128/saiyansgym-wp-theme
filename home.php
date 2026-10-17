@@ -1,5 +1,7 @@
 <?php
-// archive page - mainly used for normal posts
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
+// archive page for posts page
 get_header();
 ?>
 

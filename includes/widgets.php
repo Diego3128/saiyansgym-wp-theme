@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('ABSPATH')) die();
+if (!defined('ABSPATH')) exit("Direct access forbidden");
 
 class Saiyansgym_Classes_Widget extends WP_Widget
 {

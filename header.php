@@ -1,3 +1,7 @@
+<?php
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 

@@ -1,4 +1,7 @@
 <?php
+
+if (!defined('ABSPATH')) exit("Direct access forbidden");
+
 get_header();
 ?>
 
