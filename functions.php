@@ -1,27 +1,19 @@
 <?php
 
-
 //includes
 
 //add custom widgets
 require_once get_template_directory() . '/includes/widgets.php';
 
+//add shortcodes
+require_once get_template_directory() . '/includes/shortcodes/location.php';
 
 //add widget areas
 function saiyansgym_widgets()
 {
     register_sidebar([
-        'id' => 'sidebar_1',
-        'name' => 'Sidebar 1',
-        'before_widget' => '<div class="widget sidebar_1">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget__title text-center text-main">',
-        'after_title' => '</h3>',
-    ]);
-
-    register_sidebar([
         'id' => 'sidebar_2',
-        'name' => 'Sidebar 2',
+        'name' => 'Sidebar',
         'before_widget' => '<div class="widget sidebar_2">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget__title text-center text-main">',

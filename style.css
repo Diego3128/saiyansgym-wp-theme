@@ -743,7 +743,6 @@ Styles for a single post
   }
 }
 
-
 /* 
 ============
 styles for possible elements in the post content
@@ -772,7 +771,11 @@ styles for possible elements in the post content
   }
 
   /* Headings inside post content */
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-title);
     color: var(--color-gray-dark);
     margin-top: 2.5rem;
@@ -780,12 +783,19 @@ styles for possible elements in the post content
     line-height: 1.3;
   }
 
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.6rem; }
-  h4 { font-size: 1.3rem; }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
 
   /* Lists */
-  ul, ol {
+  ul,
+  ol {
     margin: 0 0 1.5rem 2rem;
     padding: 0;
 
@@ -832,7 +842,8 @@ styles for possible elements in the post content
     margin: 2rem 0;
     font-size: 1rem;
 
-    th, td {
+    th,
+    td {
       padding: 12px 15px;
       border: 1px solid var(--color-gray-light);
       text-align: left;
@@ -856,5 +867,156 @@ styles for possible elements in the post content
     height: 1px;
     background-color: var(--color-gray-light);
     margin: 2.5rem 0;
+  }
+}
+
+/* 
+
+=============
+contact page
+============
+*/
+
+.location-map{
+  margin-bottom: 4rem;
+  min-height: 600px;
+}
+
+/* Custom Contact Form Styles */
+.contact-form-custom {
+  font-family: var(--font-main);
+  color: var(--color-gray-dark);
+  background-color: var(--color-white);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #d6d6d6;
+  background-color: #f0f0f0;
+}
+
+/* Hide hidden fields container cleanly */
+.contact-form-custom .hidden-fields-container {
+  display: none;
+}
+
+/* Form Paragraph Spacing */
+.contact-form-custom p {
+  margin-bottom: 22px;
+}
+
+/* Form Labels */
+.contact-form-custom label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--color-gray-dark);
+}
+
+/* Inputs and Textareas */
+.contact-form-custom input[type="text"],
+.contact-form-custom input[type="email"],
+.contact-form-custom textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-main);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Focus States */
+.contact-form-custom input[type="text"]:focus,
+.contact-form-custom input[type="email"]:focus,
+.contact-form-custom textarea:focus {
+  outline: none;
+  border-color: var(--color-main);
+  box-shadow: 0 0 0 4px rgba(255, 91, 0, 0.12);
+}
+
+/* Error States */
+.contact-form-custom input.wpcf7-not-valid,
+.contact-form-custom textarea.wpcf7-not-valid {
+  border-color: #e53935;
+}
+
+.contact-form-custom .wpcf7-not-valid-tip {
+  color: #e53935;
+  font-size: 1.4rem;
+  margin-top: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.contact-form-custom input.wpcf7-submit {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  border: none;
+  padding: 15px 30px;
+  font-family: var(--font-main);
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(255, 91, 0, 0.25);
+}
+
+.contact-form-custom input.wpcf7-submit:hover {
+  background-color: #e05000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 91, 0, 0.35);
+}
+
+/* Form Response Output Message Box */
+.contact-form-custom .wpcf7-response-output {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+/* Invalid / Error Response Styling */
+.contact-form-custom.invalid .wpcf7-response-output,
+.contact-form-custom .wpcf7-response-output.wpcf7-validation-errors {
+  background-color: #fff5f5;
+  border-color: #fed7d7;
+  color: #c53030;
+}
+
+/* Success Response Styling */
+.contact-form-custom .wpcf7-response-output.wpcf7-mail-sent-ok {
+  background-color: #f0fff4;
+  border-color: #c6f6d5;
+  color: #276749;
+}
+
+.contact-form-custom {
+  .wpcf7-spinner {
+    background-color: #ff6d00;
+    aspect-ratio: 1 / 1;
+    width: 48px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  .wpcf7-spinner::before {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    width: 20px;
+    transform-origin: 15px 15px;
   }
 }
