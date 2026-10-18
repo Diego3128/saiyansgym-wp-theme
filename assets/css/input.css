@@ -112,3 +112,18 @@ nav ul li.current-menu-item a {
   content: " ▾";
   @apply text-xs opacity-75 inline-block ml-1;
 }
+
+
+
+/* ==========================================================================
+   FOOTER STYLING
+   ========================================================================== */
+.footer-menu a {
+  @apply text-gray-300 transition-colors duration-200 hover:text-main;
+}
+
+.footer-menu .current-menu-item > a {
+  @apply text-main font-semibold;
+}
+
+

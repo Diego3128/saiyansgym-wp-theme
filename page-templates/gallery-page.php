@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) exit("Direct access forbidden");
 get_header();
 ?>
 
-<main class="container container__centered container__gallery">
+<main class="mx-auto px-3 lg:px-10 max-w-5xl">
     <?php
     while (have_posts()) : the_post(); ?>
         <h1 class="main-title text-center text-main">

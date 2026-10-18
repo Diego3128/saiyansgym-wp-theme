@@ -16,7 +16,7 @@ class Saiyansgym_Classes_Widget extends WP_Widget
     public function widget($args, $instance)
     {
         $amount = !empty($instance['amount']) ? absint($instance['amount']) : 3;
-        $title = !empty($instance['title']) ? esc_html($instance['title']) : 'Latests Posts';
+        $title  = !empty($instance['title']) ? esc_html($instance['title']) : 'Latest Posts';
 
         // Echo theme widget wrapper
         echo $args['before_widget'];
@@ -25,7 +25,7 @@ class Saiyansgym_Classes_Widget extends WP_Widget
             'post_type'      => 'saiyansgym_classes',
             'posts_per_page' => $amount,
             'order'          => 'ASC',
-            'orderby' => 'rand'
+            'orderby'        => 'rand'
         ];
 
         echo $args['before_title'];
@@ -35,42 +35,66 @@ class Saiyansgym_Classes_Widget extends WP_Widget
         $classes = new WP_Query($query_args);
 
         if ($classes->have_posts()) : ?>
-            <ul class="sidebar-classes-list">
+            <ul class="space-y-4 font-main">
                 <?php while ($classes->have_posts()) : $classes->the_post(); ?>
-                    <li class="class">
-                        <a href="<?php the_permalink() ?>">
+                    <li class="bg-gray-100 border border-gray-300 rounded-xl overflow-hidden transition-all duration-300 hover:border-main/50 ">
+                        <a href="<?php the_permalink(); ?>" class="flex items-center p-3 space-x-4 group">
+
                             <?php
                             $start_time  = get_field('start_time');
                             $finish_time = get_field('finish_time');
                             $schedule    = get_field('class_days_schedule');
                             ?>
 
-                            <div class="image">
-                                <?php the_post_thumbnail("medium"); ?>
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><?php the_title(); ?></h4>
-
-                                <?php if ($start_time && $finish_time && $schedule) : ?>
-                                    <div class="schedule">
-                                        <span class="label">Schedule:</span>
-                                        <span class="value"><?= esc_html($schedule); ?></span>
-                                    </div>
-                                    <div class="time-range">
-                                        <span class="start-time"><?= esc_html($start_time); ?></span>
-                                        <span class="separator">-</span>
-                                        <span class="finish-time"><?= esc_html($finish_time); ?></span>
+                            <!-- Image Container -->
+                            <div class="shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-800 border border-gray-300">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium', [
+                                        'class' => 'w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+                                    ]); ?>
+                                <?php else : ?>
+                                    <div class="w-full h-full flex items-center justify-center text-gray-500 text-xs text-center p-1">
+                                        No Image
                                     </div>
                                 <?php endif; ?>
                             </div>
+
+                            <!-- Details Content -->
+                            <div class="min-w-0 space-y-1">
+                                <h4 class="font-title text-base text-gray-800 truncate transition-colors group-hover:text-main">
+                                    <?php the_title(); ?>
+                                </h4>
+
+                                <?php if ($start_time || $finish_time || $schedule) : ?>
+                                    <?php if ($schedule) : ?>
+                                        <div class="text-xs text-gray-600 flex flex-wrap gap-1 leading-snug">
+                                            <span class="font-semibold text-gray-600">Schedule:</span>
+                                            <span class="text-gray-600"><?= esc_html($schedule); ?></span>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if ($start_time && $finish_time) : ?>
+                                        <div class="text-xs text-main font-medium flex items-center space-x-1 pt-0.5">
+                                            <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span><?= esc_html($start_time); ?></span>
+                                            <span>-</span>
+                                            <span><?= esc_html($finish_time); ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+
                         </a>
                     </li>
                 <?php endwhile; ?>
             </ul>
-            <?php wp_reset_postdata(); // Restores original single class page post data 
-            ?>
+            <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p class="empty-widget">No classes yet</p>
+            <p class="text-gray-400 text-sm italic text-center py-4 bg-gray-900/40 rounded-xl border border-gray-800">
+                No classes found.
+            </p>
         <?php endif;
 
         echo $args['after_widget'];

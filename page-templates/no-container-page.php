@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) exit("Direct access forbidden");
 get_header();
 ?>
 
-<main>
+<main class="min-h-[80dvh]">
     <?php
     // get_template_part(get_theme_file_uri('template-parts/post-template'));
     get_template_part('template-parts/content-page');
