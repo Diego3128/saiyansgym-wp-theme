@@ -16,8 +16,8 @@ function saiyansgym_location_shortcode()
             if (!empty($location)):
         ?>
                 <div>
-                    <h2 class="text-center text-main">Our Locations</h2>
-                    <div class="location-map">
+                    <h2 class="text-center text-main mb-10! border-none!">Our Locations</h2>
+                    <div class="location-map min-h-150">
                         <?= $location; ?>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ function saiyansgym_location_shortcode()
         endif; 
         ?>
         <div>
-            <h2 class="text-center text-main">Get in touch</h2>
+            <h2 class="text-center text-main  mb-10! border-none!">Get in touch</h2>
             <?php
             echo do_shortcode('[contact-form-7 id="14b01d8" title="Custom contact form" html_class="contact-form contact-form-custom"]'); 
             ?>

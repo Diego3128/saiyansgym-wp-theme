@@ -31,7 +31,6 @@ $categoryDesc = term_description();
 
     <!-- Category Posts Section -->
     <section>
-        <!-- Left untouched as requested -->
         <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php get_template_part('template-parts/blog-posts'); ?>
         </ul>
