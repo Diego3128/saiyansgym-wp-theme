@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) exit("Direct access forbidden");
 </head>
 
 <body>
-    <header class="sticky top-0 z-50 bg-gray-dark/95 backdrop-blur-md border-b border-gray-800 text-white">
+    <header style="z-index: 99999;" class="sticky top-0 z-50 bg-gray-dark/95 backdrop-blur-md border-b border-gray-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo -->

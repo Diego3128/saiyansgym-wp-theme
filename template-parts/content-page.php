@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) exit("Direct access forbidden");
 
 while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('py-3 font-main'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('py-3 font-main my-4'); ?>>
         
         <!-- Page Title -->
         <header class="mb-8 text-center">
@@ -13,7 +13,7 @@ while (have_posts()) : the_post(); ?>
 
         <!-- Featured Image (If available) -->
         <?php if (has_post_thumbnail()) : ?>
-            <div class="mb-10 overflow-hidden rounded-2xl border border-gray-800 shadow-xl bg-gray-900">
+            <div class="mb-10 overflow-hidden rounded-lg border border-gray-100 shadow-xl bg-gray-900">
                 <?php the_post_thumbnail('large', [
                     'class' => 'w-full h-auto max-h-[450px] object-cover object-center transition-transform duration-500 hover:scale-102'
                 ]); ?>
@@ -21,7 +21,7 @@ while (have_posts()) : the_post(); ?>
         <?php endif; ?>
 
         <!-- Page Main Content Block -->
-        <div class="bg-gray-200 p-5 border-main/20 border-2 rounded-xl page-content text-gray-600 leading-relaxed text-base sm:text-lg space-y-6">
+        <div class="bg-gray-100 p-5 border-gray-300 border rounded-lg page-content text-gray-600 leading-relaxed text-base sm:text-lg space-y-6">
             <?php the_content(); ?>
         </div>
 
