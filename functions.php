@@ -22,5 +22,5 @@ require_once $saiyansgym_inc . 'widgets.php';
 require_once $saiyansgym_inc . 'shortcodes/location.php';
 //add widget areas (sidebars)
 require_once $saiyansgym_inc . 'sidebars.php';
-
-
+// custom query functions (functions can be used directly without requiring the file)
+require_once $saiyansgym_inc . 'queries.php';
